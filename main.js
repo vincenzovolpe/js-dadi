@@ -20,7 +20,7 @@ else {
 
 // Versione avanzata del gioco dei dadi: Utente contro PC
 var risposta = true;
-for (; risposta ;) {
+while (risposta) {
     // Mostriamo titolo del gioco
     document.getElementById("titolo").innerHTML = "LANCIO DEI DADI";
 
@@ -32,7 +32,7 @@ for (; risposta ;) {
 
     // Stampiamo il punteggio del dado dell' utente
     //document.getElementById("mostra-dado-utente").setAttribute("class", "visibile");
-    document.getElementById("utente").innerHTML = "Il punteggio del tuo dado è: ";
+    document.getElementById("utente").innerHTML = "Il tuo punteggio è:    ";
     document.getElementById("imgdadoutente").src = "img/" + dadoutente + ".png";
 
 
@@ -43,17 +43,18 @@ for (; risposta ;) {
 
     // Stampiamo il punteggio del dado dell' utente
     //document.getElementById("mostra-dado-pc").setAttribute("class", "visibile");
-    document.getElementById("pc").innerHTML = "Il punteggio del dado del pc è: ";
+    document.getElementById("pc").innerHTML = "Il punteggio del pc è: ";
     document.getElementById("imgdadopc").src = "img/" + dadopc + "pc.png";
 
     // Confrontiamo il punteggio dell'utente con quello del PC
     if (dadoutente > dadopc) {
         document.getElementById("risultato").innerHTML = "Complimenti hai vinto!!!"
+        document.getElementById("risultato").style.color = "green";
     }
     else {
-        document.getElementById("risultato").innerHTML = "Purtroppo hai perso, ritenta la fortuna!!!"
+        document.getElementById("risultato").innerHTML = "Purtroppo hai perso, ritenta la fortuna!!!";
+        document.getElementById("risultato").style.color = "red";
 
     }
-     risposta = parseInt(prompt('VUOI GIOCARE ANCORA? (digita 1 per continuare 0 per terminare)'));
-     console.log(risposta);
+    risposta = confirm('VUOI GIOCARE ANCORA?');
 }
