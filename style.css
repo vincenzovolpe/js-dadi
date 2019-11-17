@@ -8,10 +8,25 @@
     background-color:aqua;
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    align-items: center;
+    jus
 }
+
+#dadi {
+    display: flex;
+}
+
 #mostra-dado-utente, #mostra-dado-pc {
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+#mostra-dado-utente.visible, #mostra-dado-pc.visible, #risultato.visible {
+    display: block;
+}
+
+#mostra-dado-utente.notvisible, #mostra-dado-pc.notvisible, #risultato.notvisible {
+    display: none;
 }
